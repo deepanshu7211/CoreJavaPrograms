@@ -1,0 +1,45 @@
+package com.deep.programs.thread;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class AtomicIntegerTest{
+    public static void main(String[] args) throws InterruptedException {
+
+        Increment increment = new Increment();
+        Thread t1 = new Thread(increment);
+        Thread t2 = new Thread(increment);
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        System.out.println(" count " + increment.getCount());
+
+    }
+}
+
+class Increment implements Runnable{
+    private AtomicInteger count  = new AtomicInteger();
+
+    @Override
+    public void run() {
+        for (int i=0;i<4;i++)
+        {
+            processMethod();
+            count.incrementAndGet();
+        }
+
+    }
+
+    public void processMethod()
+    {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public int getCount() {
+        return count.get();
+    }
+}
