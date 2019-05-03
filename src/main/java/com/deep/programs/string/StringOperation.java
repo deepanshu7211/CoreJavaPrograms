@@ -16,8 +16,8 @@ public class StringOperation {
 //         stringOperation.stringContainsNumber("abc1");
 //          stringOperation.printDuplicateChar();
 //       stringOperation.replacewith20("Java is Great");
-//       stringOperation.permutation("", "ab");
-         stringOperation.reverseSentence("Java is best programming language");
+       stringOperation.permutation("", "abc");
+//         stringOperation.reverseSentence("Java is best programming language");
 //       stringOperation.pallindrome("madama");
 //        stringOperation.indexOfImp("abdabcb", "abc");
 //       stringOperation.removeChar("java", 'v');
@@ -27,6 +27,7 @@ public class StringOperation {
 //       stringOperation.longestPallindrome("forgeeksskeegfor");  //forgeeksskeegfor
 //        stringOperation.checkRotateArray();
 //        System.out.println(stringOperation.stringUniqueCharcter());
+//         stringOperation.isAnagram("armya", "mary");
 
     }
 
@@ -91,6 +92,8 @@ public class StringOperation {
         }
     }
 
+    // https://www.devglan.com/java-programs/anagram-test
+    // Check next Method
     private void findanagram(String source, String destination) {
         char[] charry = source.toCharArray();
         List<Character> original = new ArrayList<>();
@@ -117,7 +120,26 @@ public class StringOperation {
         }
 
     }
-
+    
+    private void isAnagram(String source, String destination)
+    {
+    	StringBuilder sb = new StringBuilder(destination);
+    	
+    	if(source!=null && destination !=null && source.length()== destination.length()) {
+    		char[] arr = source.toCharArray();
+    		
+    		for(char ch : arr) {
+    			int index = sb.indexOf(""+ch);
+    			if(index!=-1) {
+    				sb.deleteCharAt(index);
+    			}
+    				
+    		}
+    	}
+    	
+    	System.out.println(sb.toString().isEmpty());
+    }
+    
     private void reverse(String str) {
         StringBuilder sb = new StringBuilder();
         char[] src = str.toCharArray();
@@ -180,7 +202,7 @@ public class StringOperation {
 //                System.out.println("word.substring(0, i) :  " +word.substring(0, i));
 //                System.out.println("word.substring(i + 1, word.length())   :: " + word.substring(i + 1, word.length()));
 
-                permutation(perm + word.charAt(i), word.substring(0, i) + word.substring(i + 1, word.length()));
+              permutation(perm + word.charAt(i), word.substring(0, i) + word.substring(i + 1, word.length()));
             }
         }
     }

@@ -38,10 +38,12 @@ class Consumer implements Runnable {
 
         System.out.println(name + "  started.. ");
         synchronized (prodCons) {
-            System.out.println(" waiting for prod");
+        	
             try {
+            	Thread.sleep(1000);
+                System.out.println(" waiting for prod");
                 for (int i = 0; i < 10; i++) {
-
+                	
                     prodCons.wait();
                     System.out.println(name + " notified and consumed :: " + prodCons.getCount());
                     prodCons.notify();

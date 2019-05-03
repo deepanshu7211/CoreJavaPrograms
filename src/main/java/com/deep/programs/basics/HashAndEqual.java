@@ -40,6 +40,8 @@ class Dog {
     //overridden method, has to be exactly the same like the following
     public boolean equals(Object obj) {
         System.out.println("equals method called... ");
+        if(null == obj)
+        	return false;
         if (!(obj instanceof Dog))
             return false;
         if (obj == this)

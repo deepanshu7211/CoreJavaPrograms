@@ -2,6 +2,7 @@ package com.deep.programs.patterns;
 
 import java.util.Scanner;
 
+// This is correct program instead of Matrix Program
 public class Number_Pattern {
 	public static void main(String[] args) {
     	Scanner scanner = new Scanner(System.in);

@@ -80,8 +80,8 @@ public class ArrayOperations {
 //        System.out.println(arr.length);
 
         for (int i = 0; i < rot; i++) {
-            temp[i] = arr[i];
-//            temp[temp.length-1-i]=arr[i];
+//            temp[i] = arr[i];
+            temp[temp.length-1-i]=arr[i];
         }
 
         for (int i = 0; i < rot; i++) {
@@ -110,6 +110,8 @@ public class ArrayOperations {
         System.out.println("kth highest  " + arr[arr.length - 1 - k]);
     }
 
+    // For Reference Check Geeks For all negative numbers in an arrays use case
+    // https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/    
     private static void largest_sum_contigous_subarray()
     {
         int [] a = {-2, -3, 4, -1, -2, 1, 5, -3};

@@ -10,7 +10,8 @@ package com.deep.programs.basics;
  */
 public class FindMiddleIndex {
     public static void main(String[] args) {
-        int[] num = {2, 4, 4, 5, 4, 1};
+        int[] num = {2, 4, 4, 5, 4, 1};       
+        
         try {
             System.out.println("Starting from index 0, adding numbers till index "
                     + findMiddleIndex(num) + " and");
@@ -19,6 +20,7 @@ public class FindMiddleIndex {
             System.out.println(ex.getMessage());
         }
 
+        findEquilibirum();
     }
 
     private static int findMiddleIndex(int[] num) throws Exception {
@@ -42,4 +44,32 @@ public class FindMiddleIndex {
         }
         return end;
     }
+    
+    // Find an element in array such that sum of left array is equal to sum of right array
+    // https://www.geeksforgeeks.org/find-element-array-sum-left-array-equal-sum-right-array/ 
+    // For Brute Force : https://www.geeksforgeeks.org/equilibrium-index-of-an-array/
+    
+    private static void findEquilibirum() {
+//    	int arr[] = { 1, 4, 2, 5};
+    	int arr[] = { -7, 1, 5, 2, -4, 3, 0 };
+    	
+    	int leftsum=0, rightsum=0;
+    	//Calculate the right sum from second element
+    	for(int i=1;i<arr.length;i++)
+    		rightsum+=arr[i];
+    	
+    	// Minus from right sum and add to left sum
+    	for(int i=0,j=1;j<arr.length;i++,j++) {
+    		rightsum-=arr[j];
+    		leftsum+=arr[i];
+    		
+    		if(leftsum==rightsum) {
+    			System.out.println(" find equilibirum element "+ arr[i+1] + " index "+ (i+1));
+    			break;
+    		}
+    			
+    	}
+    	
+    }
 }
+

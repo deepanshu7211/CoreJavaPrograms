@@ -52,5 +52,15 @@ public class DuplicateCharacters {
         for (Map.Entry<Character, Integer> entry : entryList) {
             System.out.println("key ::  " + entry.getKey() + " value ::  " + entry.getValue());
         }
+        
+        // Sort by using Java 8
+        System.out.println(" ===================== Sort using Java 8========= ");
+        System.out.println("\n");
+        
+        characterIntegerMap.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(System.out::println);
+        
+        System.out.println("=========== Sort by Value ============= ");
+        
+        characterIntegerMap.entrySet().stream().sorted(Map.Entry.comparingByValue()).forEach(System.out::println);
     }
 }

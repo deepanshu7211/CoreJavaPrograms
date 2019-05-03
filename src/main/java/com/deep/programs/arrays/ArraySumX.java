@@ -14,10 +14,10 @@ public class ArraySumX {
 
     public static void main(String[] args) {
 
-//        printarray(arr);
-//        sortarray(arr);
-//        printarray(arr);
-//        findsum(arr,sum);
+        printarray(arr);
+        sortarray(arr);
+        printarray(arr);
+        findsum(arr,sum);
 //        findsumnormal(arr,sum);
     }
 
@@ -49,9 +49,9 @@ public class ArraySumX {
                 System.out.println("pair element are " + arr[l] + " " + arr[r]);
                 break;
             }
-            if (arr[l] + arr[r] < sum)
+            else if (arr[l] + arr[r] < sum)
                 l++;
-            if (arr[l] + arr[r] > sum)
+            else
                 r--;
 
         }

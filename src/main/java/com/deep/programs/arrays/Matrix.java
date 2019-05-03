@@ -1,9 +1,10 @@
 package com.deep.programs.arrays;
 
+// Check correct program Number_Pattern 
 public class Matrix {
 	public static void main(String[] args) {
 
-		int rownum = 3;
+		int rownum = 4;
 		int odd = rownum * rownum, even = (rownum) * (rownum - 1);
 
 		int arr[][] = new int[rownum][rownum];

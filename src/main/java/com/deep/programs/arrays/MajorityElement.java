@@ -15,7 +15,13 @@ public class MajorityElement {
     private static int arr[] = {1, 4, 4, 6, 10, 4};
 
     public static void main(String[] args) {
-        int size = arr.length;
+        
+        morreVotingAlgo();
+//        majorityElement();
+    }
+    
+    public static void majorityElement() {
+    	int size = arr.length;
         Map<Integer, Integer> keyMap = new HashMap<>();
         for (int i = 0; i < arr.length; i++) {
             if (!keyMap.containsKey(arr[i])) {
@@ -32,9 +38,11 @@ public class MajorityElement {
                 System.out.println(" maj element is : " + entry.getKey());
         }
 
-        morreVotingAlgo();
     }
 
+    // https://www.geeksforgeeks.org/majority-element/
+    //    This Method only works when we are given that majority element do exist in the array ,
+    //    otherwise this method won’t work 
     public static void morreVotingAlgo()
     {
         int maj=0;int count =1;
